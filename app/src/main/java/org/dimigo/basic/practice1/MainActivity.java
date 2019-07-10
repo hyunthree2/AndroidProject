@@ -1,0 +1,456 @@
+package org.dimigo.basic.practice1;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+
+//    int angryColor = getResources().getColor(R.color.angryC);
+//    int annoyingColor = getResources().getColor(R.color.annoyingC);
+//    int sosoColor = getResources().getColor(R.color.sosoC);
+//    int joyColor = getResources().getColor(R.color.joyC);
+//    int iloveitColor = getResources().getColor(R.color.happyC);
+
+    private int[] btn = {
+            R.id.Jan1,
+            R.id.Jan2,
+            R.id.Jan3,
+            R.id.Jan4,
+            R.id.Jan5,
+            R.id.Jan6,
+            R.id.Jan7,
+            R.id.Jan8,
+            R.id.Jan9,
+            R.id.Jan10,
+            R.id.Jan11,
+            R.id.Jan12,
+            R.id.Jan13,
+            R.id.Jan14,
+            R.id.Jan15,
+            R.id.Jan16,
+            R.id.Jan17,
+            R.id.Jan18,
+            R.id.Jan19,
+            R.id.Jan20,
+            R.id.Jan21,
+            R.id.Jan22,
+            R.id.Jan23,
+            R.id.Jan24,
+            R.id.Jan25,
+            R.id.Jan26,
+            R.id.Jan27,
+            R.id.Jan28,
+            R.id.Jan29,
+            R.id.Jan30,
+            R.id.Jan31,
+            R.id.Feb1,
+            R.id.Feb2,
+            R.id.Feb3,
+            R.id.Feb4,
+            R.id.Feb5,
+            R.id.Feb6,
+            R.id.Feb7,
+            R.id.Feb8,
+            R.id.Feb9,
+            R.id.Feb10,
+            R.id.Feb11,
+            R.id.Feb12,
+            R.id.Feb13,
+            R.id.Feb14,
+            R.id.Feb15,
+            R.id.Feb16,
+            R.id.Feb17,
+            R.id.Feb18,
+            R.id.Feb19,
+            R.id.Feb20,
+            R.id.Feb21,
+            R.id.Feb22,
+            R.id.Feb23,
+            R.id.Feb24,
+            R.id.Feb25,
+            R.id.Feb26,
+            R.id.Feb27,
+            R.id.Feb28,
+            R.id.Feb29,
+            R.id.Mar1,
+            R.id.Mar2,
+            R.id.Mar3,
+            R.id.Mar4,
+            R.id.Mar5,
+            R.id.Mar6,
+            R.id.Mar7,
+            R.id.Mar8,
+            R.id.Mar9,
+            R.id.Mar10,
+            R.id.Mar11,
+            R.id.Mar12,
+            R.id.Mar13,
+            R.id.Mar14,
+            R.id.Mar15,
+            R.id.Mar16,
+            R.id.Mar17,
+            R.id.Mar18,
+            R.id.Mar19,
+            R.id.Mar20,
+            R.id.Mar21,
+            R.id.Mar22,
+            R.id.Mar23,
+            R.id.Mar24,
+            R.id.Mar25,
+            R.id.Mar26,
+            R.id.Mar27,
+            R.id.Mar28,
+            R.id.Mar29,
+            R.id.Mar30,
+            R.id.Mar31,
+            R.id.Apr1,
+            R.id.Apr2,
+            R.id.Apr3,
+            R.id.Apr4,
+            R.id.Apr5,
+            R.id.Apr6,
+            R.id.Apr7,
+            R.id.Apr8,
+            R.id.Apr9,
+            R.id.Apr10,
+            R.id.Apr11,
+            R.id.Apr12,
+            R.id.Apr13,
+            R.id.Apr14,
+            R.id.Apr15,
+            R.id.Apr16,
+            R.id.Apr17,
+            R.id.Apr18,
+            R.id.Apr19,
+            R.id.Apr20,
+            R.id.Apr21,
+            R.id.Apr22,
+            R.id.Apr23,
+            R.id.Apr24,
+            R.id.Apr25,
+            R.id.Apr26,
+            R.id.Apr27,
+            R.id.Apr28,
+            R.id.Apr29,
+            R.id.Apr30,
+            R.id.May1,
+            R.id.May2,
+            R.id.May3,
+            R.id.May4,
+            R.id.May5,
+            R.id.May6,
+            R.id.May7,
+            R.id.May8,
+            R.id.May9,
+            R.id.May10,
+            R.id.May11,
+            R.id.May12,
+            R.id.May13,
+            R.id.May14,
+            R.id.May15,
+            R.id.May16,
+            R.id.May17,
+            R.id.May18,
+            R.id.May19,
+            R.id.May20,
+            R.id.May21,
+            R.id.May22,
+            R.id.May23,
+            R.id.May24,
+            R.id.May25,
+            R.id.May26,
+            R.id.May27,
+            R.id.May28,
+            R.id.May29,
+            R.id.May30,
+            R.id.May31,
+            R.id.Jun1,
+            R.id.Jun2,
+            R.id.Jun3,
+            R.id.Jun4,
+            R.id.Jun5,
+            R.id.Jun6,
+            R.id.Jun7,
+            R.id.Jun8,
+            R.id.Jun9,
+            R.id.Jun10,
+            R.id.Jun11,
+            R.id.Jun12,
+            R.id.Jun13,
+            R.id.Jun14,
+            R.id.Jun15,
+            R.id.Jun16,
+            R.id.Jun17,
+            R.id.Jun18,
+            R.id.Jun19,
+            R.id.Jun20,
+            R.id.Jun21,
+            R.id.Jun22,
+            R.id.Jun23,
+            R.id.Jun24,
+            R.id.Jun25,
+            R.id.Jun26,
+            R.id.Jun27,
+            R.id.Jun28,
+            R.id.Jun29,
+            R.id.Jun30,
+            R.id.Jul1,
+            R.id.Jul2,
+            R.id.Jul3,
+            R.id.Jul4,
+            R.id.Jul5,
+            R.id.Jul6,
+            R.id.Jul7,
+            R.id.Jul8,
+            R.id.Jul9,
+            R.id.Jul10,
+            R.id.Jul11,
+            R.id.Jul12,
+            R.id.Jul13,
+            R.id.Jul14,
+            R.id.Jul15,
+            R.id.Jul16,
+            R.id.Jul17,
+            R.id.Jul18,
+            R.id.Jul19,
+            R.id.Jul20,
+            R.id.Jul21,
+            R.id.Jul22,
+            R.id.Jul23,
+            R.id.Jul24,
+            R.id.Jul25,
+            R.id.Jul26,
+            R.id.Jul27,
+            R.id.Jul28,
+            R.id.Jul29,
+            R.id.Jul30,
+            R.id.Jul31,
+            R.id.Aug1,
+            R.id.Aug2,
+            R.id.Aug3,
+            R.id.Aug4,
+            R.id.Aug5,
+            R.id.Aug6,
+            R.id.Aug7,
+            R.id.Aug8,
+            R.id.Aug9,
+            R.id.Aug10,
+            R.id.Aug11,
+            R.id.Aug12,
+            R.id.Aug13,
+            R.id.Aug14,
+            R.id.Aug15,
+            R.id.Aug16,
+            R.id.Aug17,
+            R.id.Aug18,
+            R.id.Aug19,
+            R.id.Aug20,
+            R.id.Aug21,
+            R.id.Aug22,
+            R.id.Aug23,
+            R.id.Aug24,
+            R.id.Aug25,
+            R.id.Aug26,
+            R.id.Aug27,
+            R.id.Aug28,
+            R.id.Aug29,
+            R.id.Aug30,
+            R.id.Aug31,
+            R.id.Sep1,
+            R.id.Sep2,
+            R.id.Sep3,
+            R.id.Sep4,
+            R.id.Sep5,
+            R.id.Sep6,
+            R.id.Sep7,
+            R.id.Sep8,
+            R.id.Sep9,
+            R.id.Sep10,
+            R.id.Sep11,
+            R.id.Sep12,
+            R.id.Sep13,
+            R.id.Sep14,
+            R.id.Sep15,
+            R.id.Sep16,
+            R.id.Sep17,
+            R.id.Sep18,
+            R.id.Sep19,
+            R.id.Sep20,
+            R.id.Sep21,
+            R.id.Sep22,
+            R.id.Sep23,
+            R.id.Sep24,
+            R.id.Sep25,
+            R.id.Sep26,
+            R.id.Sep27,
+            R.id.Sep28,
+            R.id.Sep29,
+            R.id.Sep30,
+            R.id.Oct1,
+            R.id.Oct2,
+            R.id.Oct3,
+            R.id.Oct4,
+            R.id.Oct5,
+            R.id.Oct6,
+            R.id.Oct7,
+            R.id.Oct8,
+            R.id.Oct9,
+            R.id.Oct10,
+            R.id.Oct11,
+            R.id.Oct12,
+            R.id.Oct13,
+            R.id.Oct14,
+            R.id.Oct15,
+            R.id.Oct16,
+            R.id.Oct17,
+            R.id.Oct18,
+            R.id.Oct19,
+            R.id.Oct20,
+            R.id.Oct21,
+            R.id.Oct22,
+            R.id.Oct23,
+            R.id.Oct24,
+            R.id.Oct25,
+            R.id.Oct26,
+            R.id.Oct27,
+            R.id.Oct28,
+            R.id.Oct29,
+            R.id.Oct30,
+            R.id.Oct31,
+            R.id.Nov1,
+            R.id.Nov2,
+            R.id.Nov3,
+            R.id.Nov4,
+            R.id.Nov5,
+            R.id.Nov6,
+            R.id.Nov7,
+            R.id.Nov8,
+            R.id.Nov9,
+            R.id.Nov10,
+            R.id.Nov11,
+            R.id.Nov12,
+            R.id.Nov13,
+            R.id.Nov14,
+            R.id.Nov15,
+            R.id.Nov16,
+            R.id.Nov17,
+            R.id.Nov18,
+            R.id.Nov19,
+            R.id.Nov20,
+            R.id.Nov21,
+            R.id.Nov22,
+            R.id.Nov23,
+            R.id.Nov24,
+            R.id.Nov25,
+            R.id.Nov26,
+            R.id.Nov27,
+            R.id.Nov28,
+            R.id.Nov29,
+            R.id.Nov30,
+            R.id.Dec1,
+            R.id.Dec2,
+            R.id.Dec3,
+            R.id.Dec4,
+            R.id.Dec5,
+            R.id.Dec6,
+            R.id.Dec7,
+            R.id.Dec8,
+            R.id.Dec9,
+            R.id.Dec10,
+            R.id.Dec11,
+            R.id.Dec12,
+            R.id.Dec13,
+            R.id.Dec14,
+            R.id.Dec15,
+            R.id.Dec16,
+            R.id.Dec17,
+            R.id.Dec18,
+            R.id.Dec19,
+            R.id.Dec20,
+            R.id.Dec21,
+            R.id.Dec22,
+            R.id.Dec23,
+            R.id.Dec24,
+            R.id.Dec25,
+            R.id.Dec26,
+            R.id.Dec27,
+            R.id.Dec28,
+            R.id.Dec29,
+            R.id.Dec30,
+            R.id.Dec31,
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void onClick(final View v) {
+        final List<String> ListItems = new ArrayList<>();
+        ListItems.add("Angry");
+        ListItems.add("Annoying");
+        ListItems.add("Soso");
+        ListItems.add("Joy");
+        ListItems.add("I LOVE IT!");
+        final CharSequence[] items = ListItems.toArray(new String[ListItems.size()]);
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("How was your DAY?");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(DialogInterface dialog, int pos) {
+                String selectedText = items[pos].toString();
+                Toast.makeText(MainActivity.this, selectedText, Toast.LENGTH_SHORT).show();
+
+                int index = -1;
+
+                for(int i=0; i<btn.length; i++) {
+                    if (v.getId() == btn[i]) {
+                        index = i;
+                        break;
+                    }
+                }
+
+                if (index > -1) {
+                    // index == i == R.id.***
+
+                    switch(selectedText) {
+                        case("Angry") :
+                            //btn.setBackgroundColor(Color.parseColor("#664A3C"));
+                            v.setBackgroundDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.button_angry));
+                            break;
+                        case("Annoying") :
+                            v.setBackgroundDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.button_annoying));
+                            break;
+                        case("Soso") :
+                            v.setBackgroundDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.button_soso));
+                            break;
+                        case("Joy") :
+                            v.setBackgroundDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.button_joy));
+                            break;
+                        case("I LOVE IT!") :
+                            v.setBackgroundDrawable(ContextCompat.getDrawable(MainActivity.this, R.drawable.button_love));
+                            break;
+                    }
+
+                }
+            }
+        });
+        builder.show();
+    }
+}

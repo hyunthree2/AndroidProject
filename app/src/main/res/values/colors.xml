@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FAFAFA</color>
+    <color name="colorPrimaryDark">#C7C7C7</color>
+    <color name="angryC">#664A3C</color>
+    <color name="annoyingC">#E78F72</color>
+    <color name="sosoC">#FFCB99</color>
+    <color name="joyC">#FFE2C0</color>
+    <color name="happyC">#C0CCB8</color>
+</resources>
